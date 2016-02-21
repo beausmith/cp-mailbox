@@ -115,6 +115,7 @@ class MailboxViewController: UIViewController {
 
             switch imageX {
             case let x where x >= 260:
+                print("delete")
                 UIView.animateWithDuration(0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: [], animations: { () -> Void in
                     self.messageImageView.center = CGPoint(x: self.messageOriginalCenter.x + 320, y: self.messageOriginalCenter.y)
                     self.archiveParentView.center = CGPoint(x: self.archiveParentOriginalCenter.x + 320 - 60, y: self.archiveParentOriginalCenter.y)
@@ -125,10 +126,6 @@ class MailboxViewController: UIViewController {
                             }, completion: { (Bool) -> Void in
                                 self.messageImageView.center = self.messageOriginalCenter
                                 self.archiveParentView.center = self.archiveParentOriginalCenter
-                                UIView.animateWithDuration(0, delay: 1.5, options: [], animations: { () -> Void in
-                                    self.scrollView.contentOffset = CGPoint(x: 0, y: 0)
-                                    }, completion: nil
-                                )
                         })
                         
                 })
@@ -144,10 +141,6 @@ class MailboxViewController: UIViewController {
                             }, completion: { (Bool) -> Void in
                                 self.messageImageView.center = self.messageOriginalCenter
                                 self.archiveParentView.center = self.archiveParentOriginalCenter
-                                UIView.animateWithDuration(0, delay: 1.5, options: [], animations: { () -> Void in
-                                    self.scrollView.contentOffset = CGPoint(x: 0, y: 0)
-                                    }, completion: nil
-                                )
                         })
 
                 })
@@ -187,10 +180,6 @@ class MailboxViewController: UIViewController {
                     }, completion: { (Bool) -> Void in
                         self.messageImageView.center = self.messageOriginalCenter
                         self.laterParentView.center = self.laterParentOriginalCenter
-                        UIView.animateWithDuration(0, delay: 1.5, options: [], animations: { () -> Void in
-                            self.scrollView.contentOffset = CGPoint(x: 0, y: 0)
-                            }, completion: nil
-                        )
                 })
         })
     }
@@ -204,12 +193,17 @@ class MailboxViewController: UIViewController {
                     }, completion: { (Bool) -> Void in
                         self.messageImageView.center = self.messageOriginalCenter
                         self.laterParentView.center = self.laterParentOriginalCenter
-                        UIView.animateWithDuration(0, delay: 1.5, options: [], animations: { () -> Void in
-                            self.scrollView.contentOffset = CGPoint(x: 0, y: 0)
-                            }, completion: nil
-                        )
                 })
         })
+    }
+
+    override func canBecomeFirstResponder() -> Bool {
+        return true
+    }
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
+        UIView.animateWithDuration(0.3) { () -> Void in
+            self.scrollView.contentOffset = CGPoint(x: 0, y: 0)
+        }
     }
 
     /*
