@@ -12,6 +12,8 @@
 		8B90C6C01C79437400423CCC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B90C6BE1C79437400423CCC /* Main.storyboard */; };
 		8B90C6C21C79437400423CCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B90C6C11C79437400423CCC /* Assets.xcassets */; };
 		8B90C6C51C79437400423CCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B90C6C31C79437400423CCC /* LaunchScreen.storyboard */; };
+		8B90C6CD1C79455E00423CCC /* MailboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B90C6CC1C79455E00423CCC /* MailboxViewController.swift */; };
+		8B90C6CF1C79689000423CCC /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B90C6CE1C79689000423CCC /* Common.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		8B90C6C11C79437400423CCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B90C6C41C79437400423CCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B90C6C61C79437400423CCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B90C6CC1C79455E00423CCC /* MailboxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailboxViewController.swift; sourceTree = "<group>"; };
+		8B90C6CE1C79689000423CCC /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 			children = (
 				8B90C6BA1C79437400423CCC /* AppDelegate.swift */,
 				8B90C6BC1C79437400423CCC /* ViewController.swift */,
+				8B90C6CE1C79689000423CCC /* Common.swift */,
+				8B90C6CC1C79455E00423CCC /* MailboxViewController.swift */,
 				8B90C6BE1C79437400423CCC /* Main.storyboard */,
 				8B90C6C11C79437400423CCC /* Assets.xcassets */,
 				8B90C6C31C79437400423CCC /* LaunchScreen.storyboard */,
@@ -135,8 +141,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B90C6CF1C79689000423CCC /* Common.swift in Sources */,
 				8B90C6BD1C79437400423CCC /* ViewController.swift in Sources */,
 				8B90C6BB1C79437400423CCC /* AppDelegate.swift in Sources */,
+				8B90C6CD1C79455E00423CCC /* MailboxViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +292,7 @@
 				8B90C6CB1C79437400423CCC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
