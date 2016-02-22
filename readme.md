@@ -3,19 +3,17 @@
 Homework for CodePath, [Week 3 Project: Mailbox](http://courses.codepath.com/courses/ios_for_designers/unit/3#!assignment)
 
 ## Summary
-* This project took about **10 hours** to complete, over 3 sessions.
+* This project took about **11 hours** to complete, over 2 sessions.
 * **All required** steps are complete.
 * **Some optional** steps are complete. ([see requirements](#requirements))
 
 ## Demo
 ![Demo](./demo.gif)
 
-## Main Storyboard
-![Main Storyboard](./main-storyboard.png)
+<!-- ## Main Storyboard -->
+<!-- ![Main Storyboard](./main-storyboard.png) -->
 
 ## Requirements
-- [x]
-
 - On dragging the message left...
   - [x] Initially, the revealed background color should be gray.
   - [x] As the reschedule icon is revealed, it should start semi-transparent and become fully opaque. If released at this point, the message should return to its initial position.

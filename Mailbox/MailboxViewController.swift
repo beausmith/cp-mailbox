@@ -31,6 +31,7 @@ extension UIColor {
 class MailboxViewController: UIViewController {
 
     
+    var appOriginalCenter = CGPoint!()
     var messageOriginalCenter = CGPoint!()
     var archiveParentOriginalCenter = CGPoint!()
     var laterParentOriginalCenter = CGPoint!()
@@ -41,6 +42,7 @@ class MailboxViewController: UIViewController {
     var redColor = UIColor.init(hexString: "eb5433")
     var brownColor = UIColor.init(hexString: "d8a675")
 
+    @IBOutlet weak var appWrapperView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var feedImageView: UIImageView!
     @IBOutlet weak var messageView: UIView!
@@ -59,6 +61,7 @@ class MailboxViewController: UIViewController {
 
         scrollView.contentSize = CGSize(width: 320, height: feedImageView.frame.height + messageImageView.frame.height)
 
+        appOriginalCenter = appWrapperView.center
         messageView.backgroundColor = greyColor
         messageOriginalCenter = messageImageView.center
         archiveParentOriginalCenter = archiveParentView.center
@@ -197,6 +200,22 @@ class MailboxViewController: UIViewController {
         })
     }
 
+    @IBAction func didAppPan(sender: UIPanGestureRecognizer) {
+        print("didAppPan")
+    }
+
+    @IBAction func didScreenEdge(sender: UIScreenEdgePanGestureRecognizer) {
+        let translation = sender.translationInView(view)
+        print("didScreenEdge")
+
+        if sender.state == UIGestureRecognizerState.Began {
+        } else if sender.state == UIGestureRecognizerState.Changed {
+            appWrapperView.center = CGPoint(x: appOriginalCenter.x + translation.x, y: appOriginalCenter.y)
+        } else if sender.state == UIGestureRecognizerState.Ended {
+        }
+    }
+
+    // Shake To Undo
     override func canBecomeFirstResponder() -> Bool {
         return true
     }
